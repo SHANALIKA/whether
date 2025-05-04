@@ -1,9 +1,9 @@
-name: Deploy to GitHub Pages
+name: Deploy Weather App to GitHub Pages
 
 on:
   push:
     branches:
-      - main
+      - main  
 
 permissions:
   pages: write
@@ -12,17 +12,18 @@ permissions:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout code
+      - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Setup Pages
+      - name: Set up GitHub Pages
         uses: actions/configure-pages@v3
 
-      - name: Upload artifact
+      - name: Upload site files
         uses: actions/upload-pages-artifact@v2
         with:
-          path: .
+          path: .  
 
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v2
