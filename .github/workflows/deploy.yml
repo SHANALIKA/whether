@@ -3,7 +3,7 @@ name: Deploy Weather App to GitHub Pages
 on:
   push:
     branches:
-      - main  
+      - main  # Change if your default branch is different
 
 permissions:
   pages: write
@@ -20,10 +20,10 @@ jobs:
       - name: Set up GitHub Pages
         uses: actions/configure-pages@v3
 
-      - name: Upload site files
+      - name: Upload site artifact
         uses: actions/upload-pages-artifact@v2
         with:
-          path: .  
+          path: .  # Ensure your site files are in the root folder
 
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v2
